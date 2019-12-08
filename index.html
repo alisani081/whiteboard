@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="static/style/style.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<title>Canvas</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="static/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="static/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="static/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="static/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="static/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="static/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="static/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="static/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="static/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="static/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+	<link rel="manifest" href="static/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="static/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">	
+</head>
+<body>
+	<div class="container">
+		<div class="ui top fixed menu" id="computer-menu">
+			<div class="item">
+		  		<img src="static/images/logo.png" style="width: 150px;">     
+		 	</div> 
+		 	<div class="right menu">		 		 
+		 			<div class="item">
+		 				<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+		 			</div>
+		 			<div class="item">
+			 			-------------------------------<br/>
+			 			-------------------------------<br/>
+		 			</div>		 				 		 
+		 		<div class="item">
+		 			<button class="ui brown basic button">
+		 				<i class="download icon"></i>
+		 				Save
+		 			</button>
+		 		</div>
+		 	</div>		  	 
+		</div>
+		<div id="mobile-menu">
+			<div class="ui top fixed labeled icon menu">
+				<div class="item">
+			  		<img src="static/images/logo.png" style="width: 130px;">   
+			 	</div> 
+		 		<div class="item" style="padding: 10px 4px 0px 4px;">
+		 			<input type="range" min="1" max="100" value="50" class="slider" id="myRange">		 			 		 			
+		 			<p style="padding-top: 3px;">
+						-------------------------------<br/>
+		 				-------------------------------
+		 			</p> 
+		 		</div>		 		 
+			 	<div class="right menu">			 		 	 				 		 
+			 		<div class="item" style="padding: 25px 0px 0px 0px;">
+			 			<button class="mini ui brown basic button">
+		 					<i class="download icon" style="padding-left: 6px;"></i>		 					 
+		 				</button>
+			 		</div>
+			 	</div>		  	 
+			</div>
+		</div>
+		<div class="ui bottom fixed menu">
+		   <div class="item">
+		  		<i class="trash red icon" onclick="confirm('Are you sure, you want to erase?')"></i>
+		 	</div> 
+		 	<div class="right menu">
+		 		<a class="item"><span class="color" style="background:black;"></span></a>
+		  		<a class="item"><span class="color" style="background:red;"></span></a>
+		  		<a class="item"><span class="color" style="background:green;"></span></a>
+		  		<a class="item"><span class="color" style="background:blue;"></span></a>
+		 	</div>		  	
+		</div>
+		<div id="canvas">			 
+			This is the chhs cdjcbdsjcm
+		</div>		
+	</div>
+</body>
+</html>
