@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<link rel="stylesheet" type="text/css" href="static/style/style.css">
@@ -32,10 +33,12 @@
 		 	</div> 
 		 	<div class="right menu">		 		 
 		 			<div class="item">
-		 				<input type="range" min="1" max="10" value="1" class="slider" id="thickness-picker">
+		 				<input type="range" min="1" max="10" value="1" class="slider thickness-picker" id="thickness-picker">
 		 			</div>
 		 			<div class="item" style="width:250px">
-			 			<svg class="thickness" style="margin: 0px; padding:0px; height:10px; width:100%;"></svg>
+			 			<svg class="thickness" style="margin: 0px; padding:0px; height:10px; width:100%;">
+							<line x1="0" y1="5" x2="500" y2="5" stroke-width="1" style="stroke: black;" id="thicknessLine">
+						 </svg>
 		 			</div>		 				 		 
 		 		<div class="item">
 		 			<button class="ui brown basic button download-btn">
@@ -51,7 +54,7 @@
 			  		<img src="static/images/logo.png" style="width: 130px;">   
 			 	</div> 
 		 		<div class="item" style="padding: 23px 3px 10px 3px;">
-		 			<input type="range" min="1" max="100" value="50" class="slider" id="myRange">	
+		 			<input type="range"  min="1" max="10" value="1" class="slider thickness-picker" id="thickness-picker2">	
 		 		</div>		 		 
 			 	<div class="right menu">			 		 	 				 		 
 			 		<div class="item" style="padding: 17px 0px 0px 0px;">

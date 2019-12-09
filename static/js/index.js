@@ -5,35 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set elements
     let lines = [];
     let points = [];
-    let svg = null;
+    let svg = null;     
     let color = 'black';
 
     function render() {
 
         svg = d3.select("#svg");
-
         
-        showLine = d3.select(".thickness");
+        const thicknessPicker = document.querySelector("#thickness-picker");
 
-        // Create nav thickness line 
-        showLine.append('line')
-                .attr('x1', 0)
-                .attr('y1', 5)
-                .attr('x2', 500)
-                .attr('y2', 5)  
-                .attr('stroke-width', 1)              
-                .style('stroke', 'black');
-
-        document.querySelector("#thickness-picker").onchange = function() {
-            showLine.append('line')
-                .attr('x1', 0)
-                .attr('y1', 5)
-                .attr('x2', 500)
-                .attr('y2', 5)  
-                .attr('stroke-width', this.value * 2)              
-                .style('stroke', 'black');
-        };        
-
+        // Thickness line update
+        thicknessPicker.addEventListener('change', (event) => {         
+            thicknessLine = document.querySelector("#thicknessLine");
+            thicknessLine.setAttribute("stroke-width", event.target.value * 2);        
+        });    
+        
         svg.on("mousedown", function() {
             draw = true;
 

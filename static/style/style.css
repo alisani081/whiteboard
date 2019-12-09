@@ -77,5 +77,9 @@ body {
   .slider {
     width: 117px !important;
   }
+  #svg {
+    max-width: 765px !important;
+    max-height: 1000px !important;
+  }
    
 }
