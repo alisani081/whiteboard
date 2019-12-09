@@ -1,6 +1,14 @@
-body {
-	overflow: hidden !important;
+body, #svg {
+  overflow: hidden !important;
+  -ms-overflow-style: none;
+  -ms-overflow-style: none;   
+  overflow: -moz-scrollbars-none;   
 }
+
+body::-webkit-scrollbar, #svg::-webkit-scrollbar {
+  display: none;
+}
+
 .container .top, div#mobile-menu .menu, .container .bottom {
   background: #fed182 !important;
 }
@@ -65,20 +73,7 @@ body {
 }
 
 @media screen and (max-width: 765px) { 
-  
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  body::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE and Edge */
-  body {
-    -ms-overflow-style: none;
-  } 
 
-  body {
-    overflow: hidden !important;
-  }
 	#computer-menu {
 		display: none;
 	}

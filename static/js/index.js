@@ -20,6 +20,25 @@ document.addEventListener("DOMContentLoaded", () => {
             thicknessLine.setAttribute("stroke-width", event.target.value * 2);        
         });    
         
+        svg.on("touchstart", function() {
+            draw = true;
+
+            const coords = d3.touches(this);             
+            draw_point(coords[0][0], coords[0][1], false)
+        });
+
+        svg.on("touchend", function() {
+            draw = false;
+        });
+
+        svg.on("touchmove", function() {
+            if(!draw)
+                return;
+
+            const coords = d3.touches(this);             
+            draw_point(coords[0][0], coords[0][1], true)
+        });
+
         svg.on("mousedown", function() {
             draw = true;
 
@@ -38,6 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const coords = d3.mouse(this);
             draw_point(coords[0], coords[1], true);
         });
+
+        // ignore default touch behavior
+        // var touchEvents = ['touchstart', 'touchmove', 'touchend'];
+        // touchEvents.forEach(function (eventName) {
+        //     document.body.addEventListener(eventName, function(e){
+        //         e.preventDefault();
+        //     });  
+        // });
 
         document.querySelector("#erase").onclick = () => {
             const cfm = confirm('Are you sure, you want to erase?');
