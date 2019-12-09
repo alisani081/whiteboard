@@ -4,7 +4,10 @@ body, #svg {
   -ms-overflow-style: none;   
   overflow: -moz-scrollbars-none;   
 }
-
+#wrapper {
+  overflow: hidden;
+  position: fixed;
+}
 body::-webkit-scrollbar, #svg::-webkit-scrollbar {
   display: none;
 }
