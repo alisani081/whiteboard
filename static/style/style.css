@@ -65,6 +65,9 @@ body {
 }
 
 @media screen and (max-width: 765px) {
+  body {
+    overflow: hidden !important;
+  }
 	#computer-menu {
 		display: none;
 	}
