@@ -1,21 +1,24 @@
-body {
-	overflow: hidden;
-}
-#computer-menu, #mobile-menu, .container .bottom {
+/* body {
+	overflow: hidden !important;
+} */
+.container .top, div#mobile-menu .menu, .container .bottom {
   background: #fed182 !important;
 }
 
-.ui .menu img {
+#computer-menu .menu img, #mobile-menu .menu img {
   height: auto !important; 
   padding: 11px 0px 0px 0px !important;
 }
 
-#canvas {
-  margin-top: 65px;
+#svg {
+  margin-top: 65px; 
+  overflow: hidden !important;
+  width: 100%;
+  height: 600px;
 }
 
-.container .bottom .menu i{
-  cursor: pointer;
+#erase {
+  cursor: pointer !important;
 }
 
 .slider {
@@ -67,5 +70,8 @@ body {
 	}
 	#mobile-menu {
 		display: block;
-	}		 
+  }		 
+  body {
+    background: green;
+  }
 }
