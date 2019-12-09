@@ -80,6 +80,7 @@ body {
   #svg {
     max-width: 765px !important;
     max-height: 1000px !important;
+    overflow: hidden !important;
   }
    
 }

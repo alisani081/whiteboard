@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function render() {
 
-        svg = d3.select("#svg");
+        svg = d3.select("#svg");        
         
         const thicknessPicker = document.querySelector("#thickness-picker");
 
@@ -68,7 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        const thickness = document.querySelector("#thickness-picker").value;
+        if(document.body.offsetWidth <= 765) {
+            thickness = document.querySelector("#thickness-picker2").value;
+        } else {
+            thickness = document.querySelector("#thickness-picker").value;
+        }
 
         if(connect) {
             const last_point = points[points.length - 1];
