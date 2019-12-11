@@ -130,6 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function createImg() { 
         html2canvas(document.querySelector("#svg")).then(canvas => {
             document.body.appendChild(canvas);
+            style = canvas.getAttributeNode("style")
+            canvas.removeAttributeNode(style);
         });
 
         loader = document.querySelector("#loader");
@@ -140,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function downloadImg() {
         canvas = document.querySelector("canvas");
+         
         downloadBtn.href = canvas.toDataURL();
         downloadBtn.download = "myboard.png";
 
@@ -153,3 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
 });
+
+(function() {
+    // ServiceWorker is a progressive technology. Ignore unsupported browsers
+    if ('serviceWorker' in navigator) {
+    console.log('CLIENT: service worker registration in progress.');
+    navigator.serviceWorker.register('../../service-worker.js').then(function() {
+        console.log('CLIENT: service worker registration complete.');
+    }, function() {
+        console.log('CLIENT: service worker registration failure.');
+    });
+    } else {
+    console.log('CLIENT: service worker is not supported.');
+    }
+}) ();
