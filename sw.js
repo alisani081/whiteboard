@@ -11,14 +11,15 @@ var version = 'v2::';
    during the installation process. If any resource fails to be downloaded,
    then the service worker won't be installed either.
 */
-var offlineFundamentals = [
-    '',
-    'static/js/index.js',    
+var offlineFundamentals = [     
+    'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin',
+    'static/style/semantic.min.css',
     'static/style/style.css',
-    'https://d3js.org/d3.v4.min.js',
-    'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css',    
-    'https://code.jquery.com/jquery-3.1.1.min.js',
-	'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js'
+    'static/js/jquery-3.1.1.min.js',
+    'static/js/semantic.min.js',
+    'static/js/d3.v4.min.js',
+    'static/js/index.js',     
+	  'static/js/html2canvas.min.js'
 ];
 
 /* The install event fires when the service worker is first installed.
