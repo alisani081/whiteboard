@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Set SVG Style     
+    document.querySelector("#svg").style.width = document.body.offsetWidth;
+    document.querySelector("#svg").style.height = document.body.offsetHeight - 62;
+
     // State
     let draw = false;
 
@@ -58,14 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
             draw_point(coords[0], coords[1], true);
         });
 
-        // ignore default touch behavior
-        // var touchEvents = ['touchstart', 'touchmove', 'touchend'];
-        // touchEvents.forEach(function (eventName) {
-        //     document.body.addEventListener(eventName, function(e){
-        //         e.preventDefault();
-        //     });  
-        // });
-
         document.querySelector("#erase").onclick = () => {
             const cfm = confirm('Are you sure, you want to erase?');
 
@@ -121,7 +117,39 @@ document.addEventListener("DOMContentLoaded", () => {
                          .style('fill', color);
 
         points.push(point);
-    }        
+    } 
 
     render();
+
+    //Download Image
+    document.querySelectorAll(".download-btn").forEach(a => {
+        downloadBtn = a;
+        downloadBtn.addEventListener('click', createImg);
+    }); 
+
+    function createImg() { 
+        html2canvas(document.querySelector("#svg")).then(canvas => {
+            document.body.appendChild(canvas);
+        });
+
+        loader = document.querySelector("#loader");
+        loader.classList.add('active');     
+        loader.parentElement.style.display = 'block'; 
+
+        myFunc = setTimeout(downloadImg, 3000);
+    }
+    function downloadImg() {
+        canvas = document.querySelector("canvas");
+        downloadBtn.href = canvas.toDataURL();
+        downloadBtn.download = "myboard.png";
+
+        downloadBtn.click();
+        clearTimeout(myFunc);
+
+        loader.classList.remove('active');
+        loader.parentElement.style.display = 'none';
+        
+        return false;
+    }
+    
 });

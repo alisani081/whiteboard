@@ -11,7 +11,9 @@ body, #svg {
 body::-webkit-scrollbar, #svg::-webkit-scrollbar {
   display: none;
 }
-
+canvas {
+  display: none;
+}
 .container .top, div#mobile-menu .menu, .container .bottom {
   background: #fed182 !important;
 }
@@ -19,6 +21,10 @@ body::-webkit-scrollbar, #svg::-webkit-scrollbar {
 #computer-menu .menu img, #mobile-menu .menu img {
   height: auto !important; 
   padding: 11px 0px 0px 0px !important;  
+}
+
+.download-btn {
+  display: block !important;
 }
 
 #svg {
