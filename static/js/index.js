@@ -88,6 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".color-picker").forEach(a => {
             a.onclick = () => {
                 color = a.dataset.color;
+                if(a.dataset.color == 'white') {
+                    document.querySelector("#svg").style.cursor = 'cell';
+                }
+
             }
         });
 
